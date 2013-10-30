@@ -1,4 +1,7 @@
 class CalculationsController < ApplicationController
+  def home
+  end
+
   def sq
     @ze_number = params[:zebra]
     @ze_answer = @ze_number.to_f * @ze_number.to_f
