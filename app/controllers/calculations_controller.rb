@@ -13,5 +13,10 @@ class CalculationsController < ApplicationController
   end
 
   def pmt
+    rate = params[:interest_rate].to_i / 100.0 / 12
+    nper = params[:number_of_payments].to_i
+    pv = params[:present_value].to_i
+
+    @payment = (rate*pv)/(1 - (1 + rate)**(-nper))
   end
 end
